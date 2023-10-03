@@ -108,7 +108,6 @@
     "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "@mui/styled-engine-sc": "^5.14.11",
-    "@mui/x-data-grid": "^6.16.0",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^0.26.1",
     "react": "^17.0.2",

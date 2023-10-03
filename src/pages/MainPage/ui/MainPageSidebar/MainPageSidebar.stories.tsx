@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sidebar } from './Sidebar';
+import { MainPageSidebar } from './MainPageSidebar';
 
 const meta = {
   title: 'pages/MainPage/Sidebar',
-  component: Sidebar,
+  component: MainPageSidebar,
   tags: ['autodocs'],
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof MainPageSidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

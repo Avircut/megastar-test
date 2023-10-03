@@ -1,0 +1,42 @@
+.cell {
+  padding: 16px 9px;
+}
+
+.childCell {
+  position: relative;
+
+  &::before {
+    height: 1px;
+    content: "";
+    width: 11px;
+    background: #c6c6c6;
+    display: block;
+    position: absolute;
+    left: -8px;
+  }
+}
+
+.buttonGroup {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    background: #c6c6c6;
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 12px;
+    z-index: 0;
+  }
+}
+
+.iconBtn {
+  padding: 0;
+  z-index: 1;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

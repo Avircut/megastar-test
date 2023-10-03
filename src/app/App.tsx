@@ -6,7 +6,7 @@ import { Stack } from '@mui/material';
 const App = () => {
   return (
     <Suspense fallback="">
-      <Stack>
+      <Stack className="wrapper">
         <Navbar />
         <div className="content-page">
           <AppRouter />

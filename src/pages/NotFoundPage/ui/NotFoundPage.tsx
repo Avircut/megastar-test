@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Page } from 'widgets/Page/Page';
+import { Stack } from '@mui/material';
 import cls from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
@@ -9,8 +9,8 @@ interface NotFoundPageProps {
 
 export const NotFoundPage = memo(({ className } : NotFoundPageProps) => {
   return (
-    <Page className={classNames(cls.NotFoundPage)}>
+    <Stack className={classNames(cls.NotFoundPage)}>
       404 - Страница не найдена
-    </Page>
+    </Stack>
   );
 });

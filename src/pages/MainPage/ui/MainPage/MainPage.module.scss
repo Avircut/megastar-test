@@ -4,9 +4,7 @@
   gap: 16px;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 450px;
-  box-shadow: 0 5px 10px 2px rgb(34 60 80 / 20%);
-  background-color: var(--inverted-bg-color);
+.pageContent {
+  height: 100%;
+  flex-grow: 1;
 }
