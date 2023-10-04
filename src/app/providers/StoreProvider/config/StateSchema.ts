@@ -14,7 +14,6 @@ export interface StateSchema {
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   // Async
   addRow?: AddRowSchema;
-
 }
 
 export type StateSchemaKey = keyof StateSchema;

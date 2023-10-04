@@ -66,6 +66,13 @@ export const darkTheme = responsiveFontSizes(
           }),
         },
       },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            fontSize: theme.typography.button.fontSize,
+          }),
+        },
+      },
     },
   }),
 );

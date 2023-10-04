@@ -5,6 +5,7 @@ import {
   configureStore,
 } from '@reduxjs/toolkit';
 import { rtkApi } from 'shared/api/rtkApi';
+import { addRowReducer } from 'features/addRow';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 

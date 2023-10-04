@@ -11,5 +11,6 @@ export interface Outlay {
   materials?: number;
   mimExploitation?: number;
   supportCosts?: number;
-  child: Outlay[];
+  child?: Outlay[];
+  isEditing?: boolean;
 }

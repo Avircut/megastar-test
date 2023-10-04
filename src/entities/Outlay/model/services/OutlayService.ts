@@ -1,7 +1,7 @@
 import { rtkApi } from 'shared/api/rtkApi';
 import { Outlay } from '../types/OutlaySchema';
 
-const outlayApi = rtkApi.injectEndpoints({
+export const outlayApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     FetchList: build.query<Outlay[], void>({
       query: () => ({
@@ -20,7 +20,7 @@ const outlayApi = rtkApi.injectEndpoints({
     UpdateRow: build.mutation<Outlay, Outlay>({
       query: (outlay) => ({
         url: `/${outlay.id}/update`,
-        method: 'PUT',
+        method: 'POST',
         body: outlay,
       }),
       async onQueryStarted(patch, { dispatch, queryFulfilled }) {

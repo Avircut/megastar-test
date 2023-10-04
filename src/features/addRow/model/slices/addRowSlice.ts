@@ -25,6 +25,9 @@ export const addRowSlice = createSlice({
     setData: (state, action: PayloadAction<Outlay>) => {
       state.data = action.payload;
     },
+    reset: (state) => {
+      state.data = initialState.data;
+    },
   },
 });
 

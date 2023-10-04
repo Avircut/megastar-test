@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import { OutlayList, useFetchList } from 'entities/Outlay';
-import { Stack, Divider } from '@mui/material';
+import { Stack, Divider, CircularProgress } from '@mui/material';
+import { PageError } from 'widgets/PageError';
 import { MainPageSidebar } from '../MainPageSidebar/MainPageSidebar';
 import cls from './MainPage.module.scss';
 import { MainPageHeader } from '../MainPageHeader/MainPageHeader';
@@ -10,10 +11,18 @@ const MainPage = memo(() => {
   const { data: outlays, isLoading, error } = useFetchList();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   if (isLoading) {
-    return <div>Loading</div>;
+    return (
+      <Stack flexGrow={1} justifyContent="center" alignItems="center">
+        <CircularProgress />
+      </Stack>
+    );
   }
-  if (error) {
-    return <div>Error</div>;
+  if (error || !outlays) {
+    return (
+      <Stack flexGrow={1} justifyContent="center" alignItems="center">
+        <PageError />
+      </Stack>
+    );
   }
   return (
     <Stack
