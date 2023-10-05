@@ -76,5 +76,11 @@ module.exports = {
         'max-len': ['off'],
       },
     },
+    {
+      files: ['**/config/storybook/*.ts'],
+      rules: {
+        'avircut-plugin/path-checker': 'off',
+      },
+    },
   ],
 };

@@ -2,11 +2,11 @@
 import type { Preview } from '@storybook/react';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { darkTheme } from 'app/providers/theme/theme';
+import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/decorators/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/decorators/RouterDecorator/RouterDecorator';
 import { msw } from './mockHandlers';
-import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 initialize({ onUnhandledRequest: 'bypass' });
 
