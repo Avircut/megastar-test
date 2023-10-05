@@ -6,7 +6,7 @@
   "scripts": {
     "server": "webpack serve --env port=3000",
     "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production apiUrl=https://lean-lush-cormorant.glitch.me",
+    "build:prod": "webpack --env mode=production apiUrl=http://185.244.172.108:8081/v1/outlay-rows/entity/63298/row/",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
