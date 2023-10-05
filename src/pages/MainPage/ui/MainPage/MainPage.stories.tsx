@@ -13,18 +13,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Light: Story = {
+export const Default: Story = {
   args: {
   },
   decorators: [
-    StoreDecorator({ }),
-  ],
-};
-export const Dark: Story = {
-  args: {
-  },
-  decorators: [
-    StoreDecorator({ }),
+    StoreDecorator({}),
   ],
 };
 export const Loading: Story = {
@@ -33,7 +26,7 @@ export const Loading: Story = {
   parameters: {
     msw: {
       handlers: {
-        todo: rest.get(`${__API__}/todos`, (req, res, ctx) => {
+        outlay: rest.get(`${__API__}/list`, (req, res, ctx) => {
           return res(ctx.delay('infinite'));
         }),
       },
@@ -50,7 +43,7 @@ export const Error: Story = {
   parameters: {
     msw: {
       handlers: {
-        todo: rest.get(`${__API__}/todos`, (req, res, ctx) => {
+        outlay: rest.get(`${__API__}/list`, (req, res, ctx) => {
           return res(ctx.status(403));
         }),
       },

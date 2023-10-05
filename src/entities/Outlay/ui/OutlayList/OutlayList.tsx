@@ -1,5 +1,5 @@
 import {
-  FC, memo, useCallback, useState,
+  memo,
 } from 'react';
 import {
   Table,
@@ -11,13 +11,6 @@ import {
   Paper,
 } from '@mui/material';
 
-import {
-  DynamicModuleLoader,
-  ReducersList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { addRowReducer } from 'features/addRow';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { outlayApi } from '../../model/services/OutlayService';
 import { Outlay } from '../../model/types/OutlaySchema';
 import cls from './OutlayList.module.scss';
 import { EditableOutlayRow } from '../EditableOutlayRow/EditableOutlayRow';
@@ -26,9 +19,6 @@ import { OutlayRowComposition } from '../OutlayRowComposition/OutlayRowCompositi
 interface OutlayListProps {
   items: Outlay[];
 }
-const reducers: ReducersList = {
-  addRow: addRowReducer,
-};
 const columns = [
   { field: 'parentId', headerName: 'Уровень', width: 110 },
   { field: 'title', headerName: 'Наименование работ', width: 757 },
@@ -39,53 +29,42 @@ const columns = [
 ];
 
 export const OutlayList = memo(({ items }:OutlayListProps) => {
-  const dispatch = useAppDispatch();
-  const onTurnEditable = useCallback((row: Outlay) => {
-    dispatch(outlayApi.util.updateQueryData('FetchList', undefined, (draft) => {
-      const index = draft.findIndex((item) => item.id === row.id);
-      if (index !== -1) {
-        draft[index] = { ...row, isEditing: true };
-      }
-    }));
-  }, [dispatch]);
   if (!items) return null;
   return (
-    <DynamicModuleLoader reducers={reducers}>
-      <Paper elevation={0} className={cls.listWrapper}>
-        <Table size="medium" className={cls.table}>
-          <TableHead className={cls.head}>
-            <TableRow>
-              {columns.map((header) => (
-                <TableCell
+    <Paper elevation={0} className={cls.listWrapper}>
+      <Table size="medium" className={cls.table}>
+        <TableHead className={cls.head}>
+          <TableRow>
+            {columns.map((header) => (
+              <TableCell
+                color="secondary"
+                className={cls.cell}
+                key={header.field}
+                width={header.width}
+              >
+                <Typography
+                  fontWeight="400"
                   color="secondary"
-                  className={cls.cell}
-                  key={header.field}
-                  width={header.width}
+                  variant="button"
                 >
-                  <Typography
-                    fontWeight="400"
-                    color="secondary"
-                    variant="button"
-                  >
-                    {header.headerName}
-                  </Typography>
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {items.map((row) => (
-              <OutlayRowComposition
-                onTurnEditable={() => onTurnEditable(row)}
-                key={row.id}
-                row={row}
-                depth={0}
-              />
+                  {header.headerName}
+                </Typography>
+              </TableCell>
             ))}
-            <EditableOutlayRow />
-          </TableBody>
-        </Table>
-      </Paper>
-    </DynamicModuleLoader>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {items.map((row) => (
+            <OutlayRowComposition
+              key={row.id}
+              row={row}
+              depth={0}
+              id={`outlayRow${row.id}`}
+            />
+          ))}
+          <EditableOutlayRow id="addRow" />
+        </TableBody>
+      </Table>
+    </Paper>
   );
 });

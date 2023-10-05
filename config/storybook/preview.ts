@@ -6,12 +6,13 @@ import { StyleDecorator } from '../../src/shared/config/storybook/decorators/Sty
 import { ThemeDecorator } from '../../src/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/decorators/RouterDecorator/RouterDecorator';
 import { msw } from './mockHandlers';
+import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 initialize({ onUnhandledRequest: 'bypass' });
 
 const preview: Preview = {
   decorators: [
-    RouterDecorator, StyleDecorator, ThemeDecorator(darkTheme),
+    RouterDecorator, StyleDecorator, ThemeDecorator(darkTheme), StoreDecorator({}),
   ],
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },

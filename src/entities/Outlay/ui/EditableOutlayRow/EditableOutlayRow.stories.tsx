@@ -1,13 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
 import { StoreDecorator } from 'shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
-import { NotFoundPage } from './NotFoundPage';
+import { EditableOutlayRow } from './EditableOutlayRow';
 
 const meta = {
-  title: 'pages/Not Found',
-  component: NotFoundPage,
+  title: 'entities/Outlay/EditableOutlayRow',
+  component: EditableOutlayRow,
   tags: ['autodocs'],
-} satisfies Meta<typeof NotFoundPage>;
+  decorators: [
+    StoreDecorator({}),
+  ],
+} satisfies Meta<typeof EditableOutlayRow>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

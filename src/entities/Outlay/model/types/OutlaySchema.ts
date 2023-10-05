@@ -1,6 +1,6 @@
 export interface Outlay {
   parentId?: number;
-  id?:string;
+  id?:number;
   rowName?: string;
   salary?: number;
   equipmentCosts?: number;

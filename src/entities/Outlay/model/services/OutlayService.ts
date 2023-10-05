@@ -27,7 +27,7 @@ export const outlayApi = rtkApi.injectEndpoints({
         const patchResult = dispatch(
           outlayApi.util.updateQueryData('FetchList', undefined, (draft) => {
             const index = draft.findIndex((item) => item.id === patch.id);
-            if (index !== -1) draft.splice(index, 1);
+            if (index !== -1) draft[index] = { ...patch, isEditing: false };
           }),
         );
         try {
@@ -47,7 +47,7 @@ export const outlayApi = rtkApi.injectEndpoints({
         const patchResult = dispatch(
           outlayApi.util.updateQueryData('FetchList', undefined, (draft) => {
             const index = draft.findIndex((item) => item.id === patch.id);
-            if (index !== -1) draft[index] = { ...patch };
+            if (index !== -1) draft.splice(index, 1);
           }),
         );
         try {
