@@ -14,9 +14,6 @@ export const ListPage = memo(({ data, title }: ListPageProps) => {
       className={cls.wrapper}
       direction="column"
       divider={<Divider />}
-      sx={{
-        flexGrow: 1,
-      }}
     >
       <ListPageHeader
         title={title}

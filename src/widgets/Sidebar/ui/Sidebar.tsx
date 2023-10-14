@@ -8,22 +8,23 @@ import cls from './Sidebar.module.scss';
 
 export interface SidebarProps {
   width?: number;
-  open?: boolean;
 }
 
 export const Sidebar = (props: SidebarProps) => {
-  const { width = 234, open } = props;
+  const { width = 234 } = props;
   return (
     <Drawer
       variant="permanent"
       sx={{
+        flexShrink: 0,
+        width,
         '& .MuiDrawer-paper': {
           boxSizing: 'border-box',
           width,
           paddingTop: 12,
         },
       }}
-      open={open}
+      anchor="left"
     >
       <List disablePadding>
         <ListItemText
@@ -48,7 +49,6 @@ export const Sidebar = (props: SidebarProps) => {
               </ListItemButton>
             )}
           </NavLink>
-
         </List>
       </List>
     </Drawer>

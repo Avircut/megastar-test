@@ -1,35 +1,43 @@
-import { Suspense, memo, useCallback } from 'react';
+import App from 'app/App';
+import { Suspense } from 'react';
 import {
-  Routes, Route, RouteProps, Navigate,
+  Route, Navigate, Link, createBrowserRouter, createRoutesFromElements,
 } from 'react-router-dom';
 import {
+  AppRouteProps,
   routeConfig,
 } from 'shared/config/routeConfig/routeConfig';
 
 import { PageLoader } from 'widgets/PageLoader';
-
-const AppRouter = () => {
-  const renderWithWrapper = useCallback((route: RouteProps) => {
-    const element = (
+// TODO: Add there tree of ReactNodes to handle tree routes hierarchy
+const renderWithWrapper = (route: AppRouteProps) => {
+  const element = (
+    <App>
       <Suspense fallback={<PageLoader />}>
         {route.element}
       </Suspense>
-    );
-    return (
-      <Route
-        key={route.path}
-        path={route.path}
-        element={element}
-      />
-    );
-  }, []);
+    </App>
 
+  );
   return (
-    <Routes>
-      {Object.values(routeConfig).map(renderWithWrapper)}
-      <Route path="/" element={<Navigate to="/departments" />} />
-    </Routes>
+    <Route
+      key={route.path}
+      path={route.path}
+      element={element}
+      handle={{
+        crumb: () => <Link to={route.path!}>{route.title}</Link>,
+      }}
+    />
   );
 };
 
-export default memo(AppRouter);
+const AppRouter = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      {Object.values(routeConfig).map(renderWithWrapper)}
+      <Route path="/" element={<Navigate to="/departments" />} />
+    </>,
+  ),
+);
+
+export default AppRouter;

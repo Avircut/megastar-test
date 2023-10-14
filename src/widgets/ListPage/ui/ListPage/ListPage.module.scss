@@ -1,10 +1,4 @@
-.Page {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.pageContent {
-  height: 100%;
+.wrapper {
   flex-grow: 1;
+  padding: 48px 40px 0;
 }

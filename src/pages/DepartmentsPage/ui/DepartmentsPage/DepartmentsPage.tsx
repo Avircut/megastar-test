@@ -24,7 +24,7 @@ const DepartmentsPage = memo(() => {
     );
   }
   return (
-    <ListPage title="Департаменты" />
+    <ListPage title="Отделы" />
   );
 });
 export default DepartmentsPage;

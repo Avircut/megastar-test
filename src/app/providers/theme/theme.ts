@@ -11,12 +11,22 @@ export const darkTheme = responsiveFontSizes(
       },
       h3: {
         fontSize: '2.3rem',
+        fontWeight: 700,
       },
       body2: {
         fontSize: '0.63rem',
       },
     },
     components: {
+      MuiButton: {
+        styleOverrides: {
+          root: () => ({
+            paddingTop: 14,
+            paddingBottom: 14,
+            minWidth: 140,
+          }),
+        },
+      },
       MuiListItemIcon: {
         styleOverrides: {
           root: () => ({
