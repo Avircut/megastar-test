@@ -13,18 +13,6 @@ global.Request = Request;
 global.Response = Response;
 
 export const handlers = [
-  rest.get(`${__API__}/list`, (_req, res, ctx) => {
-    return res(ctx.json(mockData));
-  }),
-  rest.post(`${__API__}/create`, (_req, res, ctx) => {
-    return res(ctx.json(_req.bodyUsed));
-  }),
-  rest.put(`${__API__}/*/update`, (_req, res, ctx) => {
-    return res(ctx.json(_req.bodyUsed));
-  }),
-  rest.delete(`${__API__}/*/delete`, (_req, res, ctx) => {
-    return res(ctx.json(_req.bodyUsed));
-  }),
 ];
 
 export const server = setupServer(...handlers);

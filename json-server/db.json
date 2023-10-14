@@ -1,0 +1,41 @@
+{
+  "departments": [
+    { "id": 1, "name": "Отдел продаж", "description": "Отдел по продаже продукции" },
+    { "id": 2, "name": "Отдел маркетинга", "description": "Отдел разработки маркетинговых стратегий" },
+    { "id": 3, "name": "Отдел разработки", "description": "Отдел разработки программного обеспечения" },
+    { "id": 4, "name": "Отдел кадров", "description": "Отдел управления персоналом" },
+    { "id": 5, "name": "Отдел финансов", "description": "Отдел финансового управления" }
+  ],
+  "employees": [
+    { "id": 1, "firstName": "Иван", "lastName": "Петров", "departmentId": 1 },
+    { "id": 2, "firstName": "Мария", "lastName": "Иванова", "departmentId": 1 },
+    { "id": 3, "firstName": "Алексей", "lastName": "Сидоров", "departmentId": 1 },
+    { "id": 4, "firstName": "Екатерина", "lastName": "Козлова", "departmentId": 2 },
+    { "id": 5, "firstName": "Дмитрий", "lastName": "Смирнов", "departmentId": 2 },
+    { "id": 6, "firstName": "Анна", "lastName": "Васильева", "departmentId": 2 },
+    { "id": 7, "firstName": "Сергей", "lastName": "Игнатьев", "departmentId": 3 },
+    { "id": 8, "firstName": "Ольга", "lastName": "Борисова", "departmentId": 3 },
+    { "id": 9, "firstName": "Павел", "lastName": "Соколов", "departmentId": 3 },
+    { "id": 10, "firstName": "Андрей", "lastName": "Лебедев", "departmentId": 4 },
+    { "id": 11, "firstName": "Наталья", "lastName": "Морозова", "departmentId": 4 },
+    { "id": 12, "firstName": "Максим", "lastName": "Кузнецов", "departmentId": 4 },
+    { "id": 13, "firstName": "Олег", "lastName": "Андреев", "departmentId": 5 },
+    { "id": 14, "firstName": "Елена", "lastName": "Павлова", "departmentId": 5 },
+    { "id": 15, "firstName": "Ирина", "lastName": "Гончарова", "departmentId": 5 },
+    { "id": 16, "firstName": "Артем", "lastName": "Селезнев", "departmentId": 1 },
+    { "id": 17, "firstName": "Юлия", "lastName": "Лазарева", "departmentId": 2 },
+    { "id": 18, "firstName": "Георгий", "lastName": "Котов", "departmentId": 3 },
+    { "id": 19, "firstName": "Ангелина", "lastName": "Волкова", "departmentId": 4 },
+    { "id": 20, "firstName": "Владимир", "lastName": "Медведев", "departmentId": 5 },
+    { "id": 21, "firstName": "Татьяна", "lastName": "Никитина", "departmentId": 1 },
+    { "id": 22, "firstName": "Артур", "lastName": "Зайцев", "departmentId": 2 },
+    { "id": 23, "firstName": "Маргарита", "lastName": "Алексеева", "departmentId": 3 },
+    { "id": 24, "firstName": "Андрей", "lastName": "Семенов", "departmentId": 4 },
+    { "id": 25, "firstName": "Людмила", "lastName": "Исаева", "departmentId": 5 },
+    { "id": 26, "firstName": "Евгений", "lastName": "Тихонов", "departmentId": 1 },
+    { "id": 27, "firstName": "Анастасия", "lastName": "Григорьева", "departmentId": 2 },
+    { "id": 28, "firstName": "Денис", "lastName": "Ковалев", "departmentId": 3 },
+    { "id": 29, "firstName": "Ирина", "lastName": "Моргунова", "departmentId": 4 },
+    { "id": 30, "firstName": "Александр", "lastName": "Федоров", "departmentId": 5 }
+  ]
+}

@@ -1,27 +1,7 @@
 import { createTheme, responsiveFontSizes } from '@mui/material';
-import { grey } from '@mui/material/colors';
 
 export const darkTheme = responsiveFontSizes(
   createTheme({
-    palette: {
-      mode: 'dark',
-      background: {
-        default: grey[900],
-      },
-      primary: {
-        main: grey[50],
-        dark: grey[300],
-      },
-      secondary: {
-        main: grey[400],
-      },
-      info: {
-        main: '#7890B2',
-      },
-      error: {
-        main: '#DF4444',
-      },
-    },
     spacing: 4,
     typography: {
       button: {
@@ -30,28 +10,13 @@ export const darkTheme = responsiveFontSizes(
         fontWeight: '400',
       },
       h3: {
-        fontSize: '1.12rem',
+        fontSize: '2.3rem',
       },
       body2: {
         fontSize: '0.63rem',
       },
     },
     components: {
-      MuiAppBar: {
-        styleOverrides: {
-          root: ({ theme }) => ({
-            zIndex: theme.zIndex.drawer + 1,
-            background: theme.palette.background.default,
-          }),
-        },
-      },
-      MuiDrawer: {
-        styleOverrides: {
-          paper: ({ theme }) => ({
-            background: theme.palette.background.default,
-          }),
-        },
-      },
       MuiListItemIcon: {
         styleOverrides: {
           root: () => ({
@@ -63,13 +28,6 @@ export const darkTheme = responsiveFontSizes(
         styleOverrides: {
           root: () => ({
             margin: 0,
-          }),
-        },
-      },
-      MuiOutlinedInput: {
-        styleOverrides: {
-          root: ({ theme }) => ({
-            fontSize: theme.typography.button.fontSize,
           }),
         },
       },

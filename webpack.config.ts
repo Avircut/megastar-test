@@ -11,8 +11,7 @@ export default (env: BuildEnv) => {
   };
   const mode = env.mode || 'development';
   const isDev = mode === 'development';
-  const API_EID = env.eid || 63298;
-  const apiUrl = env.apiUrl || `http://185.244.172.108:8081/v1/outlay-rows/entity/${API_EID}/row/`;
+  const apiUrl = env.apiUrl || 'http://localhost:8000';
   const PORT = env.port || 3000;
   const config = buildWebpackConfig({
     mode,
