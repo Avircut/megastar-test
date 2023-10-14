@@ -8,11 +8,8 @@ const App = () => {
     <Suspense fallback="">
       <Stack className="wrapper">
         <Sidebar open />
-        <div className="content-page">
-          <AppRouter />
-        </div>
+        <AppRouter />
       </Stack>
-
     </Suspense>
 
   );

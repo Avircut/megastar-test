@@ -1,10 +1,9 @@
 import { memo } from 'react';
 import { Stack, Divider, CircularProgress } from '@mui/material';
 import { PageError } from 'widgets/PageError';
+import { ListPage } from 'widgets/ListPage/ui/ListPage/ListPage';
 import cls from './MainPage.module.scss';
-import { MainPageHeader } from '../MainPageHeader/MainPageHeader';
 
-const sidebarWidth = 234;
 const DepartmentsPage = memo(() => {
   // const { data: outlays, isLoading, error } = useFetchList();
   const isLoading = false;
@@ -25,26 +24,7 @@ const DepartmentsPage = memo(() => {
     );
   }
   return (
-    <Stack
-      direction="row"
-      divider={<Divider orientation="vertical" flexItem />}
-      className={cls.pageContent}
-    >
-      <Stack
-        className={cls.wrapper}
-        direction="column"
-        divider={<Divider />}
-        sx={{
-          width: { sm: `calc(100% - ${sidebarWidth}px)` },
-          ml: { sm: `${sidebarWidth}px` },
-          flexGrow: 1,
-        }}
-      >
-        <MainPageHeader
-          title="Департаменты"
-        />
-      </Stack>
-    </Stack>
+    <ListPage title="Департаменты" />
   );
 });
 export default DepartmentsPage;

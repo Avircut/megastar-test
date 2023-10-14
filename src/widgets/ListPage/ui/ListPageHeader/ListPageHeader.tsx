@@ -1,13 +1,15 @@
-import React, { FC } from 'react';
+import { Stack, Typography, Divider } from '@mui/material';
+import { memo } from 'react';
 
 interface ListPageHeaderProps {
-
+  title:string;
 }
 
-export const ListPageHeader: FC<ListPageHeaderProps> = ({ }) => {
+export const ListPageHeader = memo(({ title }: ListPageHeaderProps) => {
   return (
-    <div>
-      ListPageHeader
-    </div>
+    <Stack direction="row">
+      <Typography variant="h3" padding={3}>{title}</Typography>
+      <Divider orientation="vertical" flexItem />
+    </Stack>
   );
-};
+});

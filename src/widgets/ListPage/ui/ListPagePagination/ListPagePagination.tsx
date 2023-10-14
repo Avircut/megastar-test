@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import { memo } from 'react';
 
 interface ListPagePaginationProps {
-
+  page:number;
+  totalPage:number;
 }
 
-export const ListPagePagination: FC<ListPagePaginationProps> = ({ }) => {
+export const ListPagePagination = memo(({ page, totalPage }: ListPagePaginationProps) => {
   return (
     <div>
       ListPagePagination
     </div>
   );
-};
+});

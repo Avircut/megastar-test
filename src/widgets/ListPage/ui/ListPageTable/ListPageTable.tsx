@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import { memo } from 'react';
 
 interface ListPageTableProps {
-
+data:any[]
 }
 
-export const ListPageTable: FC<ListPageTableProps> = ({ }) => {
+export const ListPageTable = memo(({ data }: ListPageTableProps) => {
   return (
     <div>
       ListPageTable
     </div>
   );
-};
+});
